@@ -1,3 +1,4 @@
+// Author: Jordan Ho
 /*
 	External Citation:
 	Date: 9 September 2019
