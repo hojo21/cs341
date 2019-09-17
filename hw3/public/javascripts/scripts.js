@@ -21,11 +21,13 @@ $(document).ready(function(){
 */
 function process_order() {
 // Loads characters in textarea into a variable in order to search for the word "vegan"
+  var x = true;
   var str = document.getElementById("instruction_text_box").value ; 
   var n = str.search("vegan");
   if(n != -1){
   	// Alerts user that their order contains the word vegan
   	alert("Warning! Cheesecake contains dairy");
+    n = false;
   }
   // Gets value from quantity dropdown
   var quant = document.getElementById("dropQuantity").value;
@@ -38,5 +40,7 @@ function process_order() {
   	}
   }
   // Changes p1 to output order information 
-  document.getElementById("p1").innerHTML = "Thank you! Your order has been placed! Quantity: " +quant+ ", Topping: " +top+ ", Instructions: " + str; 		$("#cakePicture, #dropQuantity, #div1, #div2, #div3, #p2, #instruction_text_box, #orderButton").remove();	
+  if(n = true){
+      document.getElementById("p1").innerHTML = "Thank you! Your order has been placed! Quantity: " +quant+ ", Topping: " +top+ ", Instructions: " + str;     $("#cakePicture, #dropQuantity, #div1, #div2, #div3, #p2, #instruction_text_box, #orderButton").remove(); 
+  }
 }
